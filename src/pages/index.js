@@ -45,7 +45,7 @@ export default function Home() {
   };
 
   const renderPageContent = () => {
-    if (showSchedule) {
+    if (showSchedule || (!showClasses && !showInstructors && !showContact && !showAbout)) {
       return <Schedule />;
     } else if (showClasses) {
       return <Classes />;
