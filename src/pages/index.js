@@ -1,11 +1,64 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from 'next/head';
+import { useState, useEffect } from 'react';
+import styles from '@/styles/Home.module.css';
+import Link from 'next/link';
+import Schedule from './schedule';
+import Classes from './classes';
+import Instructors from './instructors';
+import Contact from './contact';
+import About from './about';
 
-const inter = Inter({ subsets: ['latin'] })
+const slideshowImages = [
+  '/images/lift.jpg',
+  '/images/rope.jpg',
+  '/images/yoga.jpg',
+];
 
 export default function Home() {
+  const [showSchedule, setShowSchedule] = useState(false);
+  const [showClasses, setShowClasses] = useState(false);
+  const [showInstructors, setShowInstructors] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [nextImageIndex, setNextImageIndex] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === slideshowImages.length - 1 ? 0 : prevIndex + 1
+      );
+      setNextImageIndex((prevIndex) =>
+        prevIndex === slideshowImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleMenuButtonClick = (targetState) => {
+    setShowSchedule(targetState === 'schedule');
+    setShowClasses(targetState === 'classes');
+    setShowInstructors(targetState === 'instructors');
+    setShowContact(targetState === 'contact');
+    setShowAbout(targetState === 'about');
+  };
+
+  const renderPageContent = () => {
+    if (showSchedule) {
+      return <Schedule />;
+    } else if (showClasses) {
+      return <Classes />;
+    } else if (showInstructors) {
+      return <Instructors />;
+    } else if (showContact) {
+      return <Contact />;
+    } else if (showAbout) {
+      return <About />;
+    }
+    return null;
+  };
+
   return (
     <>
       <Head>
@@ -14,101 +67,59 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.js</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
+      <main className={styles.main}>
+        <div className={styles.menuBanner}>
+          <div className={styles.slideshowContainer}>
+            {slideshowImages.map((image, index) => (
+              <img
+                key={index}
+                src={image}
+                alt="Slideshow"
+                className={`${styles.slideshowImage} ${
+                  index === currentImageIndex ? styles.current : ''
+                }`}
               />
-            </a>
+            ))}
+          </div>
+          <div className={styles.titleBox}>
+            <h1 className={styles.menuBannerTitle}>FitFuel</h1>
+            <p className={styles.menuBannerSubtitle}>The gym that fuels you.</p>
+          </div>
+          <div className={styles.menuBannerContent}>
+            <button
+              className={styles.menuBannerButton}
+              onClick={() => handleMenuButtonClick('classes')}
+            >
+              Classes
+            </button>
+            <button
+              className={styles.menuBannerButton}
+              onClick={() => handleMenuButtonClick('schedule')}
+            >
+              Schedule
+            </button>
+            <button
+              className={styles.menuBannerButton}
+              onClick={() => handleMenuButtonClick('instructors')}
+            >
+              Instructors
+            </button>
+            <button
+              className={styles.menuBannerButton}
+              onClick={() => handleMenuButtonClick('contact')}
+            >
+              Contact
+            </button>
+            <button
+              className={styles.menuBannerButton}
+              onClick={() => handleMenuButtonClick('about')}
+            >
+              About
+            </button>
           </div>
         </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+        <div className={styles.pageContent}>{renderPageContent()}</div>
       </main>
     </>
-  )
+  );
 }

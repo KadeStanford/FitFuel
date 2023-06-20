@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.5rem;
+    text-align: center;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.95);
+    font-family: "Bebas Neue", cursive;
+    color: #ffffff;
+}
+
+.contactContent{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.95);
+    gap: 2rem 0.5rem;
+}
+
+.contactInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.95);
+    gap: 2rem;
+    font-size: 1.5rem;
+
+}
+
+.contactAddress{
+    margin-top: -13%;
+}
+
+.contactTitle{
+    font-size: 3.3rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   width: clamp(80%, 50%, 30%);
+    margin: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    padding-right: 2rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.95);
+}
+
+.contactForm input{
+    width: 100%;
+    height: 2rem;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.95);
+}
+
+.contactForm textarea{
+    width: 100%;
+    height: 10rem;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.95);
+}
+
+.contactButton{
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.95);
+}
+
+.contactSocial{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.45);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0px 5px 3px rgba(0, 0, 0, 0.95);
+    gap: 2rem;
+}
+
+.contactSocialIcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+  
+  .contactSocialIcon > div {
+    flex: 0 0 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 0.5rem;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .contactSocialIcon p {
+    font-size: 1.4rem;
+    margin-top: 10px;
+  }
+  
+  .contactSocialIcon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+  }
+  
+  .contactSocialIcon a:hover {
+    transform: scale(1.1);
+  }
+
+  .contactSocialIcon div:hover {
+    transform: scale(1.1);
+    background-color: rgba(68, 68, 68, 0.95);
+  }
+  
+  .contactSocialIcon a img {
+    display: block;
+    object-fit: contain;
+  }
+  
+
