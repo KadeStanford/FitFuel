@@ -63,12 +63,11 @@
 }
 
 .slideshowContainer {
-  width: 100%;
+  width: 100vw;
   height: 140%;
   max-height: 130%;
   position: absolute;
   margin-top: -10%;
-  margin-left: -100%;
   z-index: -1; 
   /* Adjust the margin-top to create space below the menuBanner */
 }
@@ -78,6 +77,8 @@
   height: 100%;
   object-fit: cover;
   position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
@@ -145,6 +146,7 @@
 @media screen and (max-width: 768px) {
   .slideshowContainer{
     height: 100%;
+    object-fit: cover;
   }
   
 }
