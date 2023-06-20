@@ -15,7 +15,7 @@ export default function About() {
                     </div>
                     <div className={styles.aboutItem}>
                         <h2 className={styles.aboutTitle}>Our Facility</h2>
-                    <p className={styles.aboutParagraph}>At FitFuel Gym, we understand that a well-equipped gym is essential for an effective workout. That's why we have invested in state-of-the-art fitness equipment, including cardio machines, strength training equipment, free weights, and more. Our spacious and clean facility provides ample space for members to exercise comfortably and reach their fitness goals.</p>
+                    <p className={styles.aboutParagraph}>At FitFuel Gym, we understand that a well-equipped gym is essential for an effective workout. That is why we have invested in state-of-the-art fitness equipment, including cardio machines, strength training equipment, free weights, and more. Our spacious and clean facility provides ample space for members to exercise comfortably and reach their fitness goals.</p>
                     </div>
                     <div className={styles.aboutItem}>
                         <h2 className={styles.aboutTitle}>Our Instructors</h2>
